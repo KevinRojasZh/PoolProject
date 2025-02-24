@@ -32,6 +32,13 @@ class Membresia(models.Model):
         verbose_name="Usuario"
     )
 
+    alias = models.CharField(
+        max_length=50,
+        blank=True,
+        null=True,
+        verbose_name="Alias"
+    )
+
     fecha_inicio = models.DateField(
         null=True,
         blank=True,
