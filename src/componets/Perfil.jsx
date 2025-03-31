@@ -3,7 +3,11 @@ import { useNavigate } from "react-router";
 import axios from 'axios';
 
 export default function Perfil(){
-    const navigate = useNavigate()
+   // Componente Loggin 
+    const [username,setUserName]= useState('');
+    const [password,setPassword] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
+    const navigate = useNavigate();
 
     async function handleHistorico(){
         navigate('/historico')
