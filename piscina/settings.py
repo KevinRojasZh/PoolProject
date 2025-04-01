@@ -25,9 +25,30 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
+    'rest_framework_simplejwt',
     'accounts',
     'membership',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        # Si necesitas SessionAuthentication junto con JWT, la puedes añadir también.
+        # 'rest_framework.authentication.SessionAuthentication',
+    ),
+    # Aquí puedes agregar otras configuraciones de DRF que necesites
+}
+
+# Configuración opcional adicional de Simple JWT
+from datetime import timedelta
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+    'AUTH_HEADER_TYPES': ('Bearer',),
+
+}
+
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
