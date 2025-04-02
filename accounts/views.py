@@ -24,3 +24,4 @@ def obtener_usuario(request):
     user = request.user  # Usuario autenticado
     serializer = UsuarioSerializer(user)
     return Response(serializer.data)
+
