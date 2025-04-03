@@ -4,7 +4,7 @@ import Perfil from './componets/Perfil';
 import Registrate from './componets/Registrate'
 import PrivateRoute from './componets/PrivateRoute'
 import Historico from './componets/Historico'
-import { BrowserRouter,Routes,Route } from "react-router";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
 function App() {
